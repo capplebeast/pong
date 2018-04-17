@@ -11,7 +11,7 @@ Learn more about JavaScript at https://developer.mozilla.org/en-US/Learn/JavaScr
 When you're done, you can delete all of this grey text, it's just a comment.
 */
 
-var width=800, height=800
+var width=800, height=800;
 var canvas, ctx, keystate;
 var player1, computer, ball;
 

@@ -31,7 +31,7 @@ player1 = {
 computer = {
   x: null,
   y: null,
-  width: 20,
+  width: 20, 
   height: 100,
 
   update: function(){},

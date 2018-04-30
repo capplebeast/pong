@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -6,11 +6,21 @@ and open the template in the editor.
 -->
 <!DOCTYPE html>
 <html>
-    <body> Directions: You control the game with the "W" and "S" keys. First to 6 takes the win!
+    <body>
+        <audio id="Blip">
+            <source src="pongBlip.ogg" type="audio/ogg">
+            <source src="pongBlip.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="Avicii">
+            <source src="Avicii.ogg" type="audio/ogg">
+            <source src="Avicii.mp3" type="audio/mpeg">
+        </audio>
+        Directions: You control the game with the "W" and "S" keys. First to 6 takes the win!
+        Several clicks on the difficulty buttons may be needed to notice a difference.
     <div id="Menu">
         <h1 id="playerWinsTag"></h1>
             
-        <h2 id="aiWinsTag"  style = "color: white"> </h2>
+        <h2 id="aiWinsTag"  style = "color: white"></h2>
         
         <center>Ultimate Ping Pong</center>
         <input id="StartButton" type="button" value="Start Game" onclick = "startGame()" style=" display: block; margin: 0 auto; font-size: 25px;"/>
@@ -18,9 +28,7 @@ and open the template in the editor.
         <input id="Harder" type="button" value="Increase Difficulty" onclick = "increaseDiff()" style="font-size: 18px;"/>
         <input id="Eaiser" type="button" value="Decrease Difficulty" onclick = "decreaseDiff()" style="font-size: 18px;"/>
     </div>
-    <link rel="stylesheet" href="style.css">
-    <p>
-    </p>
+        <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </body>
 </html>

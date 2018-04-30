@@ -134,6 +134,7 @@ ball = {
 		if (AABBIntersect(pdle.x, pdle.y, pdle.width, pdle.height,
 				this.x, this.y, this.side, this.side)
 		) {	
+                        playAudioBlip();
 			// set the x position and calculate reflection angle
 			this.x = pdle===player ? player.x+player.width : ai.x - this.side;
 			var n = (this.y+this.side - pdle.y)/(pdle.height+this.side);
@@ -148,12 +149,12 @@ ball = {
                 
                
             
-                //PLAYER LOSES
+                //PLAYER LOSES ROUND
 		if (0 > this.x+this.side) {
                     this.serve(pdle===player ? 1 : -1);
                     aiScore +=1;
 		}
-                //COMPUTER LOSES
+                //COMPUTER LOSES ROUND
                 if(this.x > WIDTH){
                     this.serve(pdle===player ? 1 : -1);
                     playerScore +=1;
@@ -289,3 +290,16 @@ function increaseDiff(){
 function decreaseDiff(){
     diff -= .015;
 }
+
+function playAudioBlip(){
+    var x = document.getElementById("Blip");
+    x.play();
+}
+
+function playAudio(){
+    var x = document.getElementById("Avicii");
+    x.play();
+}
+
+playAudio();
+

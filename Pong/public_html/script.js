@@ -252,9 +252,10 @@ function update() {
 function draw() {
 	ctx.fillRect(0, 0, WIDTH, HEIGHT);
 	ctx.save();
-	ctx.fillStyle = "Tan";
+	ctx.fillStyle = "Cyan";
         ctx.font = "30px Arial";
         ctx.fillText("Player Score: " + playerScore, 50, 50);
+        ctx.fillStyle = "Tan";
         ctx.fillText("AI Score: " + aiScore, 460, 50);
 	ball.draw();
 	player.draw();

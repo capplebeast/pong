@@ -10,7 +10,7 @@ div {
 }
 body {
   background-color: tan;
-  font-family: "Open Sans", sans-serif;
+  font-family: Arial;
   padding: 5px 25px;
   font-size: 20px;
   margin: 0;
@@ -24,7 +24,7 @@ center{
 }
 
 h1{
-    color: tan;
+    color:cyan;
     font-family: "Open Sans", sans-serif;
     font-size: 21px;  
 }

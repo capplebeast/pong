@@ -191,7 +191,7 @@ function main() {
 	var loop = function() {
 		update();
 		draw();
-                if(playerScore>3){
+                if(playerScore>5){
                     playerWins += 1;
                     ball.speed = 0;
                     document.getElementById("Menu").style.visibility = "visible";
@@ -205,7 +205,7 @@ function main() {
                     aiScore = 0;
                     window.requestAnimationFrame(loop, canvas);
                 }
-                else if (aiScore>3){
+                else if (aiScore>5){
                     aiWins +=1;
                     ball.speed = 0;
                     document.getElementById("Menu").style.visibility = "visible";

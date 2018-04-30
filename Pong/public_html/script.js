@@ -5,12 +5,15 @@ var
 WIDTH  = 750,
 HEIGHT = 650,
 pi = Math.PI,
-UpArrow   = 38,
-DownArrow = 40,
+UpArrow   = 87,
+DownArrow = 83,
 
-
+//difficulty Setting
+diff = .1,
+//total Wins
 aiWins = 0,
 playerWins = 0,
+//Current Game Scores
 aiScore = 0,
 playerScore = 0,
 /**
@@ -62,7 +65,7 @@ ai = {
 		// calculate ideal position
 		var desty = ball.y - (this.height - ball.side)*0.5;
 		// ease the movement towards the ideal position
-		this.y += (desty - this.y) * 0.1;
+		this.y += (desty - this.y) * diff;
 		// keep the paddle inside of the canvas
 		this.y = Math.max(Math.min(this.y, HEIGHT - this.height), 0);
 	},
@@ -188,30 +191,41 @@ function main() {
 	var loop = function() {
 		update();
 		draw();
-		//window.requestAnimationFrame(loop, canvas);
                 if(playerScore>3){
                     playerWins += 1;
-                    ball.vel = 0;
+                    ball.speed = 0;
                     document.getElementById("Menu").style.visibility = "visible";
+                    document.getElementById("StartButton").style.visibility = "hidden";
+                    document.getElementById("PlayAgainButton").style.visibility = "visible";
                     var str = "Player Wins: "+playerWins;
                     document.getElementById("playerWinsTag").innerHTML = str;
                     var str = "AI Wins: "+aiWins;
                     document.getElementById("aiWinsTag").innerHTML = str;
+                    playerScore = 0;
+                    aiScore = 0;
+                    window.requestAnimationFrame(loop, canvas);
                 }
                 else if (aiScore>3){
-                    aiScore +=1;
-                    ball.vel = 0;
+                    aiWins +=1;
+                    ball.speed = 0;
                     document.getElementById("Menu").style.visibility = "visible";
+                    document.getElementById("StartButton").style.visibility = "hidden";
+                    document.getElementById("PlayAgainButton").style.visibility = "visible";
                     var str = "Player Wins: "+playerWins;
                     document.getElementById("playerWinsTag").innerHTML = str;
                     var str = "AI Wins: "+aiWins;
                     document.getElementById("aiWinsTag").innerHTML = str;
+                    playerScore = 0;
+                    aiScore = 0;
+                    window.requestAnimationFrame(loop, canvas);
                 }
                 else{
                     window.requestAnimationFrame(loop, canvas);
                 }
 	};
+    
 	window.requestAnimationFrame(loop, canvas);
+
 }
 /**
  * Initatite game objects and set start positions
@@ -258,16 +272,20 @@ function draw() {
 // start and run the game
 
 function startGame(){
-    if(aiWins<1 || playerWins<1){
         main();
         document.getElementById("Menu").style.visibility = "hidden";
-    }
-    
-    
-    else{
-        main.context.clearRect(0, 0, main.canvas.width, main.canvas.height);
-        main();
-        document.getElementById("Menu").style.visibility = "hidden";
-    }
 }
-//document.getElementByID("StartButton");
+
+function playAgain(){
+    ball.speed = 14;
+    aiScore = 0;
+    playerScore = 0;
+    ball.serve(1);
+}
+
+function increaseDiff(){
+    diff += .015;
+}
+function decreaseDiff(){
+    diff -= .015;
+}

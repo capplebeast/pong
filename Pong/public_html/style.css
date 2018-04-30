@@ -9,12 +9,12 @@ div {
     background-color: black;
 }
 body {
-  background-color: white;
+  background-color: tan;
   font-family: "Open Sans", sans-serif;
   padding: 5px 25px;
-  font-size: 18px;
+  font-size: 20px;
   margin: 0;
-  color: #444;
+  color: black;
 }
 
 center{
@@ -26,10 +26,10 @@ center{
 h1{
     color: tan;
     font-family: "Open Sans", sans-serif;
-    font-size: 17px;  
+    font-size: 21px;  
 }
 h2{
     color: tan;
     font-family: "Open Sans", sans-serif;
-    font-size: 17px;  
+    font-size: 21px;  
 }

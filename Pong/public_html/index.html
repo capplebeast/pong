@@ -6,6 +6,7 @@ and open the template in the editor.
 -->
 <!DOCTYPE html>
 <html>
+    <body> Directions: You control the game with the "W" and "S" keys. First to 6 takes the win!
     <div id="Menu">
         <h1 id="playerWinsTag"></h1>
             
@@ -13,6 +14,9 @@ and open the template in the editor.
         
         <center>Ultimate Ping Pong</center>
         <input id="StartButton" type="button" value="Start Game" onclick = "startGame()" style=" display: block; margin: 0 auto; font-size: 25px;"/>
+        <input id="PlayAgainButton" type="button" value="Play Again" onclick = "playAgain()" style="visibility: hidden; display: block; margin: 0 auto; font-size: 25px;"/>
+        <input id="Harder" type="button" value="Increase Difficulty" onclick = "increaseDiff()" style="font-size: 18px;"/>
+        <input id="Eaiser" type="button" value="Decrease Difficulty" onclick = "decreaseDiff()" style="font-size: 18px;"/>
     </div>
     <link rel="stylesheet" href="style.css">
     <p>
